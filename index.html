@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Github</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img class="profile-avatar" src="https://via.placeholder.com/180x180" alt=".">
+            <h1 class="profile-name">Gian Souza</h1>
+            <h2 class="profile-username">@ogiansouza</h2>
+            <ul class="numbers">
+                <li class="numbers-item">
+                    <h4>Repositórios</h4>
+                    30
+                </li>
+                <li class="numbers-item">
+                    <h4>Seguidores</h4>
+                    5
+                </li>
+                <li class="numbers-item">
+                    <h4>Seguindo</h4>
+                    5
+                </li>
+            </ul>
+            <a href="#" class="profile-link">Ver no Github</a>
+        </div>
+    </header>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            const profileAvatar = document.querySelector('.profile-avatar');
+            const profileName = document.querySelector('.profile-name');
+            const profileUsername = document.querySelector('.profile-username');
+            const numbersItensRepositorios = document.querySelector('.numbers-item:first-child');
+            const numberItensSeguidores = document.querySelector('.numbers-item:nth-child(2)');
+            const numberItensSeguindo = document.querySelector('.numbers-item:nth-child(3)');
+
+            fetch('https://api.github.com/users/ogiansouza')
+            .then(function(res){
+                return res.json();  
+            })
+            .then(function(json){
+                profileName.innerText = json.name;
+                profileUsername.innerText = json.login;
+                profileAvatar.src = json.avatar_url;
+                numbersItensRepositorios.innerText = json.public_repos;
+                numberItensSeguidores.innerText = json.followers;
+                numberItensSeguindo.innerText = json.following;
+            });
+        });
+    </script>
+</body>
+</html>
