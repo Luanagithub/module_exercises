@@ -17,6 +17,7 @@ AdicionarAluno("Noah", 8);
 AdicionarAluno("Liz", 10);
 AdicionarAluno("Alberto", 5);
 AdicionarAluno("Bianca", 5);
+<<<<<<< HEAD
 
 //Exemplo1
 
@@ -26,6 +27,18 @@ console.log("------------")
 
 const AlunosPassados= Alunos.filter((item)=> {
     return item.nota >=7;
+=======
+
+
+//Exemplo1
+console.log(Alunos);
+console.log("------------")
+//---------------------------------------------------
+
+const AlunosPassados= Alunos.filter((item)=> {
+    return item.nota >=7;
+    
+>>>>>>> 74cc7ef33bc1d1416226faa41b9f084c2b686a4c
 });
 
 console.log(AlunosPassados);
