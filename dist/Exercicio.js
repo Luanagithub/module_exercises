@@ -15,21 +15,21 @@ var Alunos = [];
 
 //função que adc ao array
 function AdicionarAluno(nome, nota) {
-  if (nota >= 6) {
-    var aluno = new Aluno(nome, nota);
-    Alunos.push(aluno);
-  }
+  var aluno = new Aluno(nome, nota);
+  Alunos.push(aluno);
 }
 AdicionarAluno("Noah", 8);
 AdicionarAluno("Liz", 10);
+AdicionarAluno("Alberto", 5);
+AdicionarAluno("Bianca", 5);
 
 //Exemplo1
-console.log(Alunos);
 
-//Exemplo2
-for (var _i = 0, _Alunos = Alunos; _i < _Alunos.length; _i++) {
-  var aluno = _Alunos[_i];
-  console.log("Nome: ".concat(aluno.nome, ", Nota: ").concat(aluno.nota));
-}
-//Exemplo3
-console.table(Alunos);
+console.log(Alunos);
+console.log("------------");
+//---------------------------------------------------
+
+var AlunosPassados = Alunos.filter(function (item) {
+  return item.nota >= 7;
+});
+console.log(AlunosPassados);
