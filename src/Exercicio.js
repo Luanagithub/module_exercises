@@ -17,7 +17,6 @@ AdicionarAluno("Noah", 8);
 AdicionarAluno("Liz", 10);
 AdicionarAluno("Alberto", 5);
 AdicionarAluno("Bianca", 5);
-<<<<<<< HEAD
 
 //Exemplo1
 
