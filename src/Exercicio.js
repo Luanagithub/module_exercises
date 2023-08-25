@@ -9,21 +9,24 @@ const Alunos = [];
 
 //função que adc ao array
 function AdicionarAluno(nome, nota) {
-    if (nota >= 6) {
         const aluno = new Aluno(nome, nota);
         Alunos.push(aluno);
     }
-}
 
 AdicionarAluno("Noah", 8);
 AdicionarAluno("Liz", 10);
+AdicionarAluno("Alberto", 5);
+AdicionarAluno("Bianca", 5);
+
 
 //Exemplo1
 console.log(Alunos);
+console.log("------------")
+//---------------------------------------------------
 
-//Exemplo2
-for (const aluno of Alunos) {
-    console.log(`Nome: ${aluno.nome}, Nota: ${aluno.nota}`);
-}
-//Exemplo3
-console.table(Alunos);
+const AlunosPassados= Alunos.filter((item)=> {
+    return item.nota >=7;
+    
+});
+
+console.log(AlunosPassados);
